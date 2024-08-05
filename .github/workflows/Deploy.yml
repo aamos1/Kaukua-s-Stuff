@@ -28,6 +28,12 @@ jobs:
             marked "$file" > "dist/${file%.md}.html"
           done
 
+      - name: Copy static files
+        run: |
+          cp index.html dist/
+          cp styles.css dist/
+          cp script.js dist/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
