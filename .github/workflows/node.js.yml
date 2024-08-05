@@ -26,7 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Install Dependencies
+  run: npm install express path fs marked
     - run: npm ci
-    - run: npm install express path fs marked
     - run: npm run build --if-present
     - run: npm test
