@@ -40,6 +40,7 @@ jobs:
       - name: Convert Markdown to HTML
         run: |
           mkdir -p dist/blog-posts
+          cp blog-posts/*.md dist/blog-posts/
           for file in blog-posts/*.md; do
             marked "$file" > "dist/${file%.md}.html"
           done
